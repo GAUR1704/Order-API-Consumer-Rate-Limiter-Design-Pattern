@@ -1,0 +1,13 @@
+resilience4j:
+  ratelimiter:
+    instances:
+      orderServiceRateLimiter:
+        limit-for-period: 5
+        limit-refresh-period: 60s
+        timeout-duration: 10s
+        register-health-indicator: true
+
+spring:
+  cloud:
+    openfeign:
+      url: http://localhost:8082
